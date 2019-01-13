@@ -2,6 +2,7 @@
 
 import fbchat
 from variables import *
+from utils import *
 
 
 class Client(fbchat.Client):
