@@ -10,4 +10,7 @@ PASSWORD = os.getenv('PASSWORD')
 
 ALL_GROUPS = os.getenv('ALL_GROUPS') == 'true'
 AUTO_ACCEPT = os.getenv('AUTO_ACCEPT') == 'true'
-GROUP_IDS = os.getenv('GROUP_IDS').replace(' ', '').split(',')
+GROUP_IDS = os.getenv('GROUP_IDS').split(',')
+
+MENTION = os.getenv('MENTION')
+EXACT = os.getenv('EXACT') == 'true'

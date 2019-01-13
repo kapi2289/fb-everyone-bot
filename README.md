@@ -18,12 +18,15 @@ $ nano .env
 ```
 
 ```bash
-EMAIL="email@example.com" # Facebook email
-PASSWORD="secret" # Facebook password
+EMAIL=email@example.com # Facebook email
+PASSWORD=secret # Facebook password
 
-ALL_GROUPS=true # Work on all groups
+ALL_GROUPS=true # Whether to work on all groups
 AUTO_ACCEPT=true # Accept all groups that someone will add you to
-GROUP_IDS="99999999999, 99999999999, 99999999999" # Can be empty when ALL_GROUPS is true
+GROUP_IDS=99999999999,99999999999,99999999999 # Can be empty when ALL_GROUPS is true
+
+MENTION=@everyone # Trigger text
+EXACT=false # Whether if message needs to be exactly MENTION
 ```
 
 ## Run
