@@ -23,6 +23,18 @@ class Client(fbchat.Client):
         mentions = [Mention(uid, 0, len(MENTION)) for uid in group.participants]
         self.send(Message(text=MENTION, mentions=mentions), thread_id=thread_id, thread_type=thread_type)
 
+    @d_if(AUTO_ACCEPT)
+    def onInbox(self, **kwargs):
+        self.acceptPending()
+
+    def acceptPending(self):
+        thread_ids = []
+        thread_ids += [thread.uid for thread in self.fetchThreadList(thread_location=ThreadLocation.PENDING, limit=20)
+            if thread.type == ThreadType.GROUP]
+        thread_ids += [thread.uid for thread in self.fetchThreadList(thread_location=ThreadLocation.OTHER, limit=20)
+            if thread.type == ThreadType.GROUP]
+        self.moveThreads(ThreadLocation.INBOX, thread_ids)
+
 
 if __name__ == "__main__":
     client = Client(EMAIL, PASSWORD)
