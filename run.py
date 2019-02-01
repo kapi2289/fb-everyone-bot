@@ -37,5 +37,6 @@ class Client(fbchat.Client):
 
 
 if __name__ == "__main__":
-    client = Client(EMAIL, PASSWORD)
+    client = Client(FB_EMAIL, FB_PASSWORD)
     client.listen()
+

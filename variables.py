@@ -5,12 +5,15 @@ import os
 
 load_dotenv()
 
-EMAIL = os.getenv('EMAIL')
-PASSWORD = os.getenv('PASSWORD')
+def is_true(a):
+    return a.lower() in ("true", "yes", "1")
 
-ALL_GROUPS = os.getenv('ALL_GROUPS') == 'true'
-AUTO_ACCEPT = os.getenv('AUTO_ACCEPT') == 'true'
+FB_EMAIL = os.getenv('FB_EMAIL')
+FB_PASSWORD = os.getenv('FB_PASSWORD')
+
+ALL_GROUPS = is_true(os.getenv('ALL_GROUPS'))
+AUTO_ACCEPT = is_true(os.getenv('AUTO_ACCEPT'))
 GROUP_IDS = os.getenv('GROUP_IDS').split(',')
 
 MENTION = os.getenv('MENTION')
-EXACT = os.getenv('EXACT') == 'true'
+EXACT = is_true(os.getenv('EXACT'))

@@ -18,8 +18,8 @@ $ nano .env
 ```
 
 ```bash
-EMAIL=email@example.com # Facebook email
-PASSWORD=secret # Facebook password
+FB_EMAIL=email@example.com # Facebook email
+FB_PASSWORD=secret # Facebook password
 
 ALL_GROUPS=true # Whether to work on all groups
 AUTO_ACCEPT=true # Accept all groups that someone will add you to
@@ -34,3 +34,4 @@ EXACT=false # Whether if message needs to be exactly MENTION
 ```console
 $ python run.py
 ```
+
