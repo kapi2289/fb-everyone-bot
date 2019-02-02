@@ -20,6 +20,7 @@ $ nano .env
 ```bash
 FB_EMAIL=email@example.com # Facebook email
 FB_PASSWORD=secret # Facebook password
+FB_USE_SESSION # Whether to use saved Facebook session (session.json file)
 
 ALL_GROUPS=true # Whether to work on all groups
 AUTO_ACCEPT=true # Accept all groups that someone will add you to
