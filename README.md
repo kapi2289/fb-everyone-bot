@@ -5,7 +5,8 @@
 ```console
 $ git clone https://github.com/kapi2289/fb-everyone-bot.git
 $ cd fb-everyone-bot
-$ python -m pip install -r requirements.txt
+$ pip install --user pipenv
+$ pipenv install
 ```
 
 ## Configuration
@@ -33,6 +34,6 @@ EXACT=false # Whether if message needs to be exactly MENTION
 ## Run
 
 ```console
-$ python run.py
+$ pipenv run python  run.py
 ```
 
