@@ -2,7 +2,8 @@
 
 import fbchat
 from fbchat.models import *
-from variables import *
+
+from options import *
 from utils import *
 
 
@@ -25,9 +26,9 @@ class Client(fbchat.Client):
 
     @d_if(AUTO_ACCEPT)
     def onInbox(self, **kwargs):
-        self.acceptPending()
+        self.accept_pending()
 
-    def acceptPending(self):
+    def accept_pending(self):
         thread_ids = []
         thread_ids += [thread.uid for thread in self.fetchThreadList(thread_location=ThreadLocation.PENDING, limit=20)
             if thread.type == ThreadType.GROUP]
@@ -39,4 +40,3 @@ class Client(fbchat.Client):
 if __name__ == "__main__":
     client = Client(FB_EMAIL, FB_PASSWORD, session_cookies=FB_SESSION)
     client.listen()
-
